@@ -1,4 +1,8 @@
 <style>
+:root {
+  --primary-color: green;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bevan:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
@@ -27,6 +31,10 @@ html, body{
   /*overscroll-behavior-y: none;*/
 }
 
+h1{
+  font-size: 4rem;
+}
+
 nav{
   background: white;
   box-shadow: -1px -2px 20px 6px #4c4c4c;
@@ -45,6 +53,7 @@ nav .links{
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: 1rem;
 }
 
 nav .links a{
@@ -60,30 +69,42 @@ section{
 }
 
 section h2{
-  font-size: 25px;
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Bevan", serif;
 }
 
 section p{
-  font-size: 25px;
+  font-size: 1.5rem;
 }
 
 footer{
   width: 100%;
   height: 60px;
-  background: green;
+  background: linear-gradient(#006400 10%, var(--primary-color));
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+
+footer p{
+  color: white;
+  text-align: right;
+  padding: 10px;
 }
 
 #home hgroup{
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: calc(100% - 70px);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   flex-flow: column;
-  font-size: 2em;
+  font-size: 2rem;
 }
 
 #home hgroup h1{
@@ -103,7 +124,7 @@ footer{
   text-transform: uppercase;
   color: grey;
   letter-spacing: -1px;
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 12px;
 }
 
@@ -117,7 +138,7 @@ footer{
   font-weight: 100;
   /*text-transform: uppercase;*/
   color: grey;
-  font-size: 14px;
+  font-size: 0.9rem;
   line-height: 17px;
   letter-spacing: 3px;
   /*letter-spacing: 4px;*/
@@ -135,7 +156,7 @@ footer{
   object-fit: fill;
 }
 
-#about{
+#about, #insurance{
   background: white;
   text-align: center;
   height: auto;
@@ -146,15 +167,16 @@ footer{
   margin: 0px auto 50px auto;
 }
 
-#about .insurance-cards{
+#insurance .insurance-cards{
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 4rem;
   list-style-type: none;
   margin: 0px 20px 0px 20px;
+  text-shadow: 0px 1px 7px rgba(0, 0, 0, 0.5), 0px 0px 7px rgba(0, 0, 0, 0.5), 0px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
-#about .insurance-cards li{
+#insurance .insurance-cards li{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,15 +185,20 @@ footer{
   box-shadow: 0px 5px 15px grey;
 }
 
-#about .insurance-cards img{
+#insurance .insurance-cards img{
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-#about .insurance-cards p{
+#insurance .insurance-cards img:nth-child(1),insurance .insurance-cards img:nth-child(8){
+  filter: brightness(0.8);
+}
+
+#insurance .insurance-cards p{
   position: absolute;
   color: white;
+  font-size: 2.5rem;
 
 }
 
@@ -181,7 +208,49 @@ footer{
 
 #contact{
   background: white;
-  margin:auto;
+  margin-right: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.contacts{
+  display: flex;
+  justify-content: center;
+}
+
+.contacts ul{
+  list-style-type: none;
+}
+
+.contacts ul li{
+  padding: 10px;
+  font-size: 1.6rem;
+  display: flex;
+}
+
+.contacts ul li span, .contacts ul li p, .contacts ul li a{
+  padding: 10px;
+  color: black;
+}
+
+.contacts ul li span, .contacts ul li span img{
+  color: green;
+  height: 30px;
+}
+
+@media (max-width: 768px) {
+
+  .slideshow img, .slideshow video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  #insurance .insurance-cards {
+      grid-template-columns: repeat(1, 1fr);
+  }
+
 }
 
 </style>
@@ -228,9 +297,10 @@ footer{
         <div class="about-us">
           <h2>About Us</h2>
           <p>Hello, I’m Ray Johnson, I’m here when you’re ready to talk about your insurance needs. I love everything about being in Trenton, NJ and getting to serve the surrounding area. I can help you find insurance options for your individual needs, including Life, Homeowners, Auto and more. When you’re ready to talk through your insurance options, request an appointment or call me to see how I can help.</p>
-      </div>
-      <div id="insurance">
-        <h2>What we do</h2>
+        </div>
+      </section>
+      <section id="insurance">
+        <h2>What We Do</h2>
         <ul class = "insurance-cards">
           <li>
             <p>Life Insurance</p>
@@ -273,22 +343,22 @@ footer{
             <!--Photo by <a href="https://unsplash.com/@lorenzohamers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lorenzo Hamers</a> on <a href="https://unsplash.com/photos/a-green-car-parked-in-front-of-a-red-brick-building-LSjZxktEr5E?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>-->
           </li>
         </ul>
-      </div>
       </section>
-      <!--<section id="insurance"></section>-->
       <section id="contact">
         <h2>Contact Us</h2>
         <!--https://www.americannational.com/agent?s=raymondjohnson-6105-->
-        <div>
+        <div class="contacts">
           <ul>
-            <li><span>&#128222;</span>(609) 584-0100</li>
-            <li><span>&#128439;</span>(609) 584-1866</li>
-            <li><span>&#9993;</span>rayjohnson@american-national.com</li>
-            <li><span>&#8962;</span>311 route 156 trenton, NJ, 08620</li>
+            <li><span><img src="assets/phone.svg"></span><p>(609) 584-0100</p></li>
+            <li><span><img src="assets/fax.svg"></span><p>(609) 584-1866</p></li>
+            <li><span><img src="assets/email.svg"></span><a href="mailto:rayjohnson@american-national.com">rayjohnson@american-national.com</a></li>
+            <li><span><img src="assets/office.svg"></span><p>311 route 156 trenton, NJ, 08620</p></li>
           </ul>
         </div>
       </section>
-    <footer></footer>
+    <footer>
+      <p>© 2026 The Ray Johnson Agency. All rights reserved.</p>
+    </footer>
     <!--<script src="./script.js"></script>-->
   </body>
 </html>

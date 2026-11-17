@@ -59,6 +59,14 @@ section{
   scroll-margin-top: 80px;
 }
 
+section h2{
+  font-size: 25px;
+}
+
+section p{
+  font-size: 25px;
+}
+
 footer{
   width: 100%;
   height: 60px;
@@ -130,24 +138,29 @@ footer{
 #about{
   background: white;
   text-align: center;
-  height: auto
+  height: auto;
+}
+
+#about .about-us{
+  width: 80%;
+  margin: 0px auto 50px auto;
 }
 
 #about .insurance-cards{
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4rem;
   list-style-type: none;
+  margin: 0px 20px 0px 20px;
 }
 
 #about .insurance-cards li{
-  width: 250px;
-  height: 150px;
-  flex: 0 0 calc(50% - 45px);
-  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px grey;
 }
 
 #about .insurance-cards img{
@@ -168,6 +181,7 @@ footer{
 
 #contact{
   background: white;
+  margin:auto;
 }
 
 </style>
@@ -211,45 +225,68 @@ footer{
         </div>
       </section>
       <section id="about">
-        <h2>About Us</h2>
-        <p>Hello, I’m Ray Johnson, I’m here when you’re ready to talk about your insurance needs. I love everything about being in Trenton, NJ and getting to serve the surrounding area. I can help you find insurance options for your individual needs, including Life, Homeowners, Auto and more. When you’re ready to talk through your insurance options, request an appointment or call me to see how I can help.</p>
-        <h3>What we do</h3>
+        <div class="about-us">
+          <h2>About Us</h2>
+          <p>Hello, I’m Ray Johnson, I’m here when you’re ready to talk about your insurance needs. I love everything about being in Trenton, NJ and getting to serve the surrounding area. I can help you find insurance options for your individual needs, including Life, Homeowners, Auto and more. When you’re ready to talk through your insurance options, request an appointment or call me to see how I can help.</p>
+      </div>
       <div id="insurance">
+        <h2>What we do</h2>
         <ul class = "insurance-cards">
-          <li>Life Insurance
-          Photo by Alena Darmel: https://www.pexels.com/photo/a-family-hugging-each-other-7642040/</li>
           <li>
-            <img src="assets/farm_thumbnail.jpg"/>
+            <p>Life Insurance</p>
+            <img src="assets/life_insurance_thumbnail.jpg" alt="shot of the back of a family of two parents and two children with tehir arms around each other"/>
+            <!--Photo by Alena Darmel: https://www.pexels.com/photo/a-family-hugging-each-other-7642040/-->
+          </li>
+          <li>
+            <img src="assets/farm_thumbnail.jpg" alt="red barn on a farm"/>
             <p>Farm</p>
-            Photo by <a href="https://unsplash.com/@francesgunn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Frances Gunn</a> on <a href="https://unsplash.com/photos/barn-surrounded-by-trees-QcBAZ7VREHQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+            <!--Photo by <a href="https://unsplash.com/@francesgunn?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Frances Gunn</a> on <a href="https://unsplash.com/photos/barn-surrounded-by-trees-QcBAZ7VREHQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
           </li>
-          <li>Equine
-Photo by <a href="https://unsplash.com/@juan_ir17?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Juan I. Riera</a> on <a href="https://unsplash.com/photos/brown-horse-on-green-grass-field-during-daytime-Xh8wy0jin1I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          <li>
+            <img src="assets/horse_thumbnail.jpg" alt="horse grazing in a pasture"/>
+            <p>Equine</p>
+            <!--Photo by <a href="https://unsplash.com/@juan_ir17?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Juan I. Riera</a> on <a href="https://unsplash.com/photos/brown-horse-on-green-grass-field-during-daytime-Xh8wy0jin1I?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
           </li>
-          <li>Winery & Vineyard
-Photo by <a href="https://unsplash.com/@sir_jarvis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matthew</a> on <a href="https://unsplash.com/photos/a-bunch-of-grapes-from-a-vine-in-a-vineyard-MbQ_c84_w2o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          <li>
+            <img src="assets/winery_thumbnail.jpg" alt="green grapes in front of winery"/>
+            <p>Winery & Vineyard</p>
+            <!--Photo by <a href="https://unsplash.com/@sir_jarvis?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Matthew</a> on <a href="https://unsplash.com/photos/a-bunch-of-grapes-from-a-vine-in-a-vineyard-MbQ_c84_w2o?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
           </li>
-          <li>Commercial & Small Business
-Photo by <a href="https://unsplash.com/@sara_kozak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sara Kozak</a> on <a href="https://unsplash.com/photos/green-storefront-with-open-signs-and-plants-oQF86wU7UDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          <li>
+            <img src="assets/small_business_thumbnail.jpg" alt="front door of teal small buisness building"/>
+            <p>Commercial & Small Business</p>
+            <!--Photo by <a href="https://unsplash.com/@sara_kozak?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Sara Kozak</a> on <a href="https://unsplash.com/photos/green-storefront-with-open-signs-and-plants-oQF86wU7UDc?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
           </li>
-          <li>Contractor
-
-            Photo by <a href="https://unsplash.com/@jeriden94?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeriden Villegas</a> on <a href="https://unsplash.com/photos/man-in-orange-and-black-vest-wearing-white-helmet-holding-yellow-and-black-power-tool-VLPUm5wP5Z0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+          <li>
+            <p>Contractor</p>
+            <img src="assets/contractor_thumbnail.jpg" alt="contractor working with tools"/>
+            <!--Photo by <a href="https://unsplash.com/@jeriden94?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jeriden Villegas</a> on <a href="https://unsplash.com/photos/man-in-orange-and-black-vest-wearing-white-helmet-holding-yellow-and-black-power-tool-VLPUm5wP5Z0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
           </li>
-          <li>Landscaping</li>
-          Photo by <a href="https://unsplash.com/@fraem?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FRAEM GmbH</a> on <a href="https://unsplash.com/photos/a-man-pulling-a-wheelbarrow-with-a-wheel-LVJnIiIeyO0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-          <li>Home & Auto</li>
+          <li>
+            <img src="assets/landscaping_thumbnail.jpg" alt="man using wheelbarrow"/>
+            <p>Landscaping</p>
+            <!--Photo by <a href="https://unsplash.com/@fraem?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">FRAEM GmbH</a> on <a href="https://unsplash.com/photos/a-man-pulling-a-wheelbarrow-with-a-wheel-LVJnIiIeyO0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>-->
+          </li>
+          <li>
+            <img src="assets/car_thumbnail.jpg" alt="car in front of house"/>
+            <p>Home & Auto</p>
+            <!--Photo by <a href="https://unsplash.com/@lorenzohamers?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Lorenzo Hamers</a> on <a href="https://unsplash.com/photos/a-green-car-parked-in-front-of-a-red-brick-building-LSjZxktEr5E?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>-->
+          </li>
         </ul>
       </div>
       </section>
       <!--<section id="insurance"></section>-->
       <section id="contact">
-        https://www.americannational.com/agent?s=raymondjohnson-6105
-        <div>(609) 584-0100
-  (609) 584-1866
-  rayjohnson@
-  american-national.com
-  311 route 156 trenton, NJ, 08620</div>
+        <h2>Contact Us</h2>
+        <!--https://www.americannational.com/agent?s=raymondjohnson-6105-->
+        <div>
+          <ul>
+            <li><span>&#128222;</span>(609) 584-0100</li>
+            <li><span>&#128439;</span>(609) 584-1866</li>
+            <li><span>&#9993;</span>rayjohnson@american-national.com</li>
+            <li><span>&#8962;</span>311 route 156 trenton, NJ, 08620</li>
+          </ul>
+        </div>
       </section>
     <footer></footer>
     <!--<script src="./script.js"></script>-->
